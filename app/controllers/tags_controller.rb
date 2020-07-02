@@ -1,14 +1,15 @@
+# frozen_string_literal: true
+
 class TagsController < ApplicationController
-
-	def index
+  def index
     @tags = Tag.all
-	end
-	
-	def show
-		@tag = Tag.find(params[:id])
-	end
+  end
 
-	def destroy
+  def show
+    @tag = Tag.find(params[:id])
+  end
+
+  def destroy
     @tag = Tag.find(params[:id])
     @tag.destroy
     flash.notice = "Tag '#{@tag.name}' Destroyed!"
@@ -16,5 +17,4 @@ class TagsController < ApplicationController
   end
 
   before_action :require_login, only: [:destroy]
-
 end
