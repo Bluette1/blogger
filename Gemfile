@@ -59,4 +59,3 @@ gem 'paperclip'
 
 gem 'sorcery'
 
-gem 'rubocop', '~>0.81.0'

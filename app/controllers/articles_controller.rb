@@ -19,7 +19,9 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.author_id = current_user.id
     @article.save
+    p @article
     flash.notice = "Article '#{@article.title}' Created!"
     redirect_to article_path(@article)
   end
@@ -33,6 +35,7 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+    
   end
 
   def update
@@ -43,4 +46,12 @@ class ArticlesController < ApplicationController
   end
 
   before_action :require_login, except: %i[show index]
+
+  def check_user
+    unless @author.id == @article.author_id
+      redirect_to root_path
+      false
+    end
+  end
+
 end
