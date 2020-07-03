@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ArticlesController < ApplicationController
+
   include ArticlesHelper
 
   def index
@@ -21,7 +22,6 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     @article.author_id = current_user.id
     @article.save
-    p @article
     flash.notice = "Article '#{@article.title}' Created!"
     redirect_to article_path(@article)
   end
@@ -47,8 +47,11 @@ class ArticlesController < ApplicationController
 
   before_action :require_login, except: %i[show index]
 
+  before_action :check_user, only: %i[edit update destroy]
+
   def check_user
-    unless @author.id == @article.author_id
+    @article = Article.find(params[:id])
+    unless current_user.id == @article.author_id
       redirect_to root_path
       false
     end
