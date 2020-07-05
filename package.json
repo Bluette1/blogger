@@ -8,6 +8,7 @@
     "@rails/webpacker": "4.2.2",
     "turbolinks": "^5.2.0"
   },
+  "scripts": {"lint-fix": "npx stylelint --fix  app/assets/stylesheets/"},
   "version": "0.1.0",
   "devDependencies": {
     "stylelint": "^13.3.3",
