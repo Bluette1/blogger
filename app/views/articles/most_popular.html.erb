@@ -1,0 +1,14 @@
+<h1>The Most Popular Articles</h1>
+
+<ul id="articles">
+  <% @articles.each do |article| %>
+    <li>
+      <%= link_to article.title, article_path(article) %>
+    </li>
+  <% end %>
+</ul>
+
+<hr>
+
+<%= link_to "<< Back to Articles List", articles_path %> 
+

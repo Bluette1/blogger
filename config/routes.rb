@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
   end
+  
+  get '/most_popular', to: 'articles#most_popular'
 
   resources :tags
 

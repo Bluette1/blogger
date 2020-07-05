@@ -59,4 +59,10 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def most_popular
+
+    @articles = Article.order('view_count desc').first(3)
+
+  end
+
 end
