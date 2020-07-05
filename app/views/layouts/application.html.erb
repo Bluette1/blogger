@@ -4,13 +4,14 @@
     <title>Blogger</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-  <p class="flash"><%= flash.notice %></p>
+  <body class="row-1">
+  <main class="col-lg-11">
+   <p class="flash"><%= flash.notice %></p>
     <%= yield %><br>
     <hr>
       <h6>
@@ -21,5 +22,18 @@
           <%= link_to "(login)", login_path %>
         <% end %>
       </h6>
+  </main>
+       <nav class="mt-5 col-lg-1 d-lg-block right-items navbar fixed-top h-100 pt-0 d-flex flex-column align-content-end">
+       <h2 class="mb-n5">Links</h2>
+       <hr>
+                <ul class="pl-0 pr-0 mt-5 d-flex justify-content-between align-items-center flex-column">
+                    <li><%= link_to 'articles', articles_path %></li><br>
+                    <li><%= link_to 'authors', authors_path %></li><br>
+                    <li><%= link_to 'tags', tags_path %></li><br>
+                    <li>
+                    <%= link_to 'account', logged_in? ? author_path(current_user) : login_path %>
+                    </li><br>
+                </ul> 
+            </nav>
   </body>
 </html>

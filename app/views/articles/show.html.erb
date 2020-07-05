@@ -6,6 +6,11 @@
   <% end %>
 </p>
 
+<p>
+  Views:
+  <%= @article.view_count %>
+</p>
+
 <p><%= image_tag @article.image.url(:medium) %></p>
 
 <p><%= @article.body %></p>
