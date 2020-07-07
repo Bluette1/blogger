@@ -47,7 +47,7 @@ class ArticlesController < ApplicationController
     redirect_to article_path(@article)
   end
 
-  before_action :require_login, except: %i[show index]
+  before_action :require_login, except: %i[show index most_popular]
 
   before_action :check_user, only: %i[edit update destroy]
 
@@ -60,9 +60,7 @@ class ArticlesController < ApplicationController
   end
 
   def most_popular
-
     @articles = Article.order('view_count desc').first(3)
-
   end
 
 end
