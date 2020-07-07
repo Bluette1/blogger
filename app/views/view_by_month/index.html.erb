@@ -1,0 +1,11 @@
+<h1>Articles by Month</h1>
+<ul id="articles" class="pl-0 pr-0 mt-5 d-flex justify-content-between align-items-center flex-column">
+
+  <% @months.each do |month| %>
+  <% p month.to_s, "month" %>
+  <br>
+  <li>
+    <%= link_to month.to_s, view_by_month_path(month) %>
+  </li>
+  <% end %>
+</ul>
