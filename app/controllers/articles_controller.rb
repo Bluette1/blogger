@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class ArticlesController < ApplicationController
-
   include ArticlesHelper
 
   def index
@@ -37,7 +36,6 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
-    
   end
 
   def update
@@ -62,5 +60,4 @@ class ArticlesController < ApplicationController
   def most_popular
     @articles = Article.order('view_count desc').first(3)
   end
-
 end

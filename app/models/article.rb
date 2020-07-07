@@ -20,7 +20,7 @@ class Article < ApplicationRecord
   end
 
   def count_views
-    self.view_count += 1  
-    self.save
+    self.view_count += 1
+    save
   end
 end
