@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  get '/most_popular', to: 'articles#most_popular'
+
+  resources :view_by_month, only: %i[index show]
+
   resources :tags
 
   resources :authors

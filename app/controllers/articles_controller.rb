@@ -1,15 +1,21 @@
 # frozen_string_literal: true
 
 class ArticlesController < ApplicationController
-
   include ArticlesHelper
 
   def index
     @articles = Article.all
+    respond_to do |format|
+      format.html 
+      format.xml { render :xml=>@articles } 
+      format.json { render :json=>@articles } 
+      format.rss 
+    end
   end
 
   def show
     @article = Article.find(params[:id])
+    @article.count_views
     @comment = Comment.new
     @comment.article_id = @article.id
   end
@@ -21,6 +27,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.author_id = current_user.id
+    @article.view_count = 0
     @article.save
     flash.notice = "Article '#{@article.title}' Created!"
     redirect_to article_path(@article)
@@ -35,7 +42,6 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
-    
   end
 
   def update
@@ -45,7 +51,7 @@ class ArticlesController < ApplicationController
     redirect_to article_path(@article)
   end
 
-  before_action :require_login, except: %i[show index]
+  before_action :require_login, except: %i[show index most_popular]
 
   before_action :check_user, only: %i[edit update destroy]
 
@@ -57,4 +63,7 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def most_popular
+    @articles = Article.order('view_count desc').first(3)
+  end
 end

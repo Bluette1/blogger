@@ -2,7 +2,13 @@
 
 <%= form_for [ @article, @comment ] do |f| %>
   <p>
-    <%= f.label :author_name, current_user.username%>
+   <% if logged_in? %>
+   <%= f.label :author_name, current_user.username%>
+    <% else %>
+     <%= f.label :author_name %><br/>
+    <%= f.text_field :author_name %> 
+   <% end %>
+    
   </p>
   <p>
     <%= f.label :body, "Your Comment" %><br/>
