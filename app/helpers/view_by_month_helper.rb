@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module ViewByMonthHelper
   def articles_by_month
     months_articles = {}

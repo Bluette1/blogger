@@ -1,15 +1,13 @@
-# frozen_string_literal: true
-
 class ArticlesController < ApplicationController
   include ArticlesHelper
 
   def index
     @articles = Article.all
     respond_to do |format|
-      format.html 
-      format.xml { render :xml=>@articles } 
-      format.json { render :json=>@articles } 
-      format.rss 
+      format.html
+      format.xml { render xml: @articles }
+      format.json { render json: @articles }
+      format.rss
     end
   end
 

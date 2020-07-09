@@ -8,7 +8,10 @@
     "@rails/webpacker": "4.2.2",
     "turbolinks": "^5.2.0"
   },
-  "scripts": {"lint-fix": "npx stylelint --fix  app/assets/stylesheets/"},
+  "scripts": {
+    "stylelint-fix": "npx stylelint '**/*.{css,scss}'",
+    "rubocop-fix": "rubocop --except Style/FrozenStringLiteralComment -a"
+  },
   "version": "0.1.0",
   "devDependencies": {
     "stylelint": "^13.3.3",
