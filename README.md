@@ -18,7 +18,7 @@ PROJECT: BLOG APP](https://www.theodinproject.com/courses/ruby-on-rails/lessons/
 
 ## Live Demo
 
-[Live Demo](https://blogger-app-48377.herokuapp.com/)
+[Deployed site](https://bloggerwise.herokuapp.com/)
 
 ### Run instructions 
 -  You can clone the GitHub repo and type the following commands in the terminal to run the bot locally 
