@@ -35,6 +35,16 @@ Make sure the server is running
   - http://localhost:3000/articles: where you can view existing articles 
   - http://localhost:3000/tags: where you can view existing articles 
 - Follow the links on the site to access the available features.
+- In order to create articles first login by clicking on [login](https://bloggerwise.herokuapp.com/login). After loging in, you will be able to [add users](https://bloggerwise.herokuapp.com/authors/new) (if you're admin), create articles, as well as comment on existing ones.
+- For purposes of testing the site, accounts for admin and guest has been added with the following credentials which you can use to login:
+    ##### Admin
+     - Username: admin
+     - Email: admin@example.com
+     - Password: password
+    ##### Guest
+     - Username: guest
+     - Email: guest@example.com
+     - Password: password
 
 ## Deployment
 - You can deploy on [Heroku](https://devcenter.heroku.com/categories/ruby-support).
