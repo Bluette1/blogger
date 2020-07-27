@@ -3,10 +3,14 @@
 <hr>
 <%= link_to "Create a New Article", new_article_path, class: "new_article" %>
 
+<div class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">Articles <b class="caret"></b></a>
+<ul class="dropdown-menu">
+    <li class="dropdown-item"><%= link_to 'All', articles_path %></li>
+    <li class="dropdown-item"><%= link_to "Most popular", most_popular_path%></li>
+    <li class="dropdown-item"><%= link_to "View by month", view_by_month_index_path%></li>
+</ul>
+</div>
 
-
-    <%= link_to "View the Most Popular Articles", most_popular_path%><br>
-
-    <%= link_to "View the Articles by Month", view_by_month_index_path%>
   
 
