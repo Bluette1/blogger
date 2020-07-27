@@ -29,6 +29,9 @@ PROJECT: BLOG APP](https://www.theodinproject.com/courses/ruby-on-rails/lessons/
     ```
 
 ### How to use the site
+
+#### Locally
+
 Make sure the server is running
 - Go to http://localhost:3000/ in your web browser
 - You will be able to access the following routes (among others)
@@ -36,7 +39,10 @@ Make sure the server is running
   - http://localhost:3000/tags: where you can view existing articles 
 - Follow the links on the site to access the available features.
 - In order to create articles first login by clicking on [login](https://bloggerwise.herokuapp.com/login). After loging in, you will be able to [add users](https://bloggerwise.herokuapp.com/authors/new) (if you're admin), create articles, as well as comment on existing ones.
-- For purposes of testing the site, accounts for admin and guest has been added with the following credentials which you can use to login:
+
+##### Live Site
+
+- For purposes of testing the [deployed site](https://bloggerwise.herokuapp.com/), accounts for admin and guest has been added with the following credentials which you can use to login:
     ##### Admin
      - Username: admin
      - Email: admin@example.com
