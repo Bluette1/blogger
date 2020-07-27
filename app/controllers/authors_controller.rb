@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class AuthorsController < ApplicationController
   before_action :set_author, only: %i[show edit update destroy]
 
@@ -73,13 +71,11 @@ class AuthorsController < ApplicationController
     params.require(:author).permit(:username, :email, :password, :password_confirmation)
   end
 
-  before_action :zero_authors_or_authenticated, only: %i[new create]
+  before_action :zero_authors_or_authenticated?, only: %i[new create]
 
-  def zero_authors_or_authenticated
-    unless Author.count == 0 || current_user
-      redirect_to root_path
-      false
-    end
+  def zero_authors_or_authenticated?
+    redirect_to root_path unless Author.count.zero? || current_user
+    false
   end
 
   before_action :require_login, except: %i[new create]
