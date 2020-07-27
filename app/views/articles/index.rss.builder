@@ -1,8 +1,8 @@
-xml.instruct! :xml, version: "1.0" 
-xml.rss version: "2.0" do
+xml.instruct! :xml, version: '1.0'
+xml.rss version: '2.0' do
   xml.channel do
-    xml.title "Blogger Articles"
-    xml.description "Articles From Blogger Authors"
+    xml.title 'Blogger Articles'
+    xml.description 'Articles From Blogger Authors'
     xml.link articles_path
 
     @articles.each do |article|

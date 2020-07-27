@@ -1,15 +1,13 @@
-# frozen_string_literal: true
-
 class ArticlesController < ApplicationController
   include ArticlesHelper
 
   def index
     @articles = Article.all
     respond_to do |format|
-      format.html 
-      format.xml { render :xml=>@articles } 
-      format.json { render :json=>@articles } 
-      format.rss 
+      format.html
+      format.xml { render xml: @articles }
+      format.json { render json: @articles }
+      format.rss
     end
   end
 
@@ -53,14 +51,11 @@ class ArticlesController < ApplicationController
 
   before_action :require_login, except: %i[show index most_popular]
 
-  before_action :check_user, only: %i[edit update destroy]
+  before_action :user?, only: %i[edit update destroy]
 
-  def check_user
-    @article = Article.find(params[:id])
-    unless current_user.id == @article.author_id
-      redirect_to root_path
-      false
-    end
+  def user?
+    redirect_to root_path unless current_user.id == @article.author_id
+    false
   end
 
   def most_popular

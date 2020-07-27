@@ -69,12 +69,6 @@ td {
   vertical-align: baseline;
 }
 
-body {
-  line-height: 1;
-  color: black;
-  background: white;
-}
-
 ol,
 ul {
   list-style: none;
@@ -124,17 +118,6 @@ input[type=submit] {
   font-weight: bold;
 }
 
-.fancy-button-reset-base-class::-moz-focus-inner,
-input[type=submit]::-moz-focus-inner {
-  border: none;
-  padding: 0;
-}
-
-.fancy-button-reset-base-class:focus,
-input[type=submit]:focus {
-  outline: none;
-}
-
 article,
 aside,
 canvas,
@@ -157,7 +140,7 @@ summary {
 
 .headings,
 h1 {
-  font-family: "Yanone Kaffeesatz", sans;
+  font-family: "Yanone Kaffeesatz", sans, sans-serif;
 }
 
 html {
@@ -168,11 +151,11 @@ html {
   background-size: 80px 80px;
   background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(25%, rgba(255, 255, 255, 0.1)), color-stop(25%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 0.1)), color-stop(75%, rgba(255, 255, 255, 0.1)), color-stop(75%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 0)));
   background-image: -moz-linear-gradient(left top, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0));
-  background-image: linear-gradient(left top, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0));
+  background-image: linear-gradient(to left top, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0));
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans, sans-serif;
   background: #fff;
   margin: 50px auto 30px;
   color: #2d4159;
@@ -209,7 +192,7 @@ body::before {
   right: 8px;
   top: 8px;
   height: 260px;
-  background: #2b445c;
+  background-color: #2b445c;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   -o-border-radius: 6px;
@@ -237,7 +220,6 @@ body::after {
   content: " ";
   position: absolute;
   top: 0;
-  bottom: 0;
   left: 0;
   right: 0;
   bottom: 2px;
@@ -381,6 +363,11 @@ h4 {
   color: #6c7c9a;
 }
 
+form p {
+  padding: 0;
+  margin-bottom: 0.6em;
+}
+
 .comment p {
   padding-left: 12px;
   border-left: 5px solid rgba(45, 65, 89, 0.5);
@@ -398,11 +385,6 @@ h4 {
   border-top: none;
 }
 
-.comment + h3,
-.comment + h4 {
-  margin: 0 0 0.5em;
-}
-
 .comment:nth-last-of-type(1) {
   border-bottom: 1px solid #ddd;
   margin-bottom: 2em;
@@ -415,6 +397,11 @@ h4,
 h5,
 h6 {
   font-weight: bold;
+}
+
+.comment + h3,
+.comment + h4 {
+  margin: 0 0 0.5em;
 }
 
 .top-button,
@@ -445,6 +432,18 @@ a.new_article,
   text-decoration: none;
 }
 
+.article_actions a[href$='edit'],
+.article_actions a[data-method='delete'] {
+  text-decoration: none;
+  float: none;
+  margin-left: 0.5em;
+  padding: 4px 12px 3px 8px;
+}
+
+.article_actions a[data-method='delete'] {
+  right: 90px;
+}
+
 .top-button:hover,
 a.new_article:hover,
 .article_actions a[href$='edit']:hover,
@@ -463,6 +462,14 @@ a.new_article:active,
 
 #sidebar + ul {
   padding-right: 180px;
+}
+
+#articles li {
+  border-bottom: 1px dashed #e5e5e5;
+  padding: 1em 0 0.8em;
+  margin-right: 20px;
+  font-size: 1.2em;
+  position: relative;
 }
 
 #sidebar + ul li {
@@ -503,14 +510,6 @@ a.new_article:active,
   border-right: 1px solid #e2e2e2;
 }
 
-#articles li {
-  border-bottom: 1px dashed #e5e5e5;
-  padding: 1em 0 0.8em;
-  margin-right: 20px;
-  font-size: 1.2em;
-  position: relative;
-}
-
 #articles li:last-child {
   -moz-border-radius-bottomleft: 6px;
   -webkit-border-bottom-left-radius: 6px;
@@ -519,6 +518,21 @@ a.new_article:active,
   -khtml-border-bottom-left-radius: 6px;
   border-bottom-left-radius: 6px;
   border-bottom: 0;
+}
+
+.article_actions a {
+  float: left;
+  color: #999;
+}
+
+#sidebar ul a {
+  color: #6c7c9a;
+}
+
+#articles .actions a {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: progid: dximagetransform.microsoft.alpha(opacity=20);
+  opacity: 0.2;
 }
 
 #articles li > a:first-child {
@@ -537,15 +551,9 @@ a.new_article:active,
   top: 2px;
 }
 
-#articles .actions a {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
-  filter: progid:dximagetransform.microsoft.alpha(opacity=20);
-  opacity: 0.2;
-}
-
 #articles .actions a:hover {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-  filter: progid:dximagetransform.microsoft.alpha(opacity=40);
+  filter: progid: dximagetransform.microsoft.alpha(opacity=40);
   opacity: 0.4;
 }
 
@@ -562,39 +570,22 @@ a.new_article:active,
   padding-bottom: 0.7em;
   font-size: 0.9em;
   overflow: hidden;
-  *zoom: 1;
+  zoom: 1;
   text-align: right;
-}
-
-.article_actions a {
-  float: left;
-  color: #999;
-}
-
-.article_actions a:hover img {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-  filter: progid:dximagetransform.microsoft.alpha(opacity=60);
-  opacity: 0.6;
 }
 
 .article_actions img {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
-  filter: progid:dximagetransform.microsoft.alpha(opacity=20);
+  filter: progid: dximagetransform.microsoft.alpha(opacity=20);
   opacity: 0.2;
   position: relative;
   top: 2px;
 }
 
-.article_actions a[href$='edit'],
-.article_actions a[data-method='delete'] {
-  text-decoration: none;
-  float: none;
-  margin-left: 0.5em;
-  padding: 4px 12px 3px 8px;
-}
-
-.article_actions a[data-method='delete'] {
-  right: 90px;
+.article_actions a:hover img {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: progid: dximagetransform.microsoft.alpha(opacity=60);
+  opacity: 0.6;
 }
 
 p.tag_list {
@@ -620,10 +611,6 @@ p.tag_list {
   font-weight: normal;
 }
 
-#sidebar ul a {
-  color: #6c7c9a;
-}
-
 .input,
 form input[type=text],
 form input[type=password],
@@ -646,6 +633,16 @@ form textarea {
   font-size: 1.3em;
 }
 
+form input[type=text],
+form input[type=password] {
+  margin: 0;
+}
+
+form textarea {
+  height: 12em;
+  font-size: 1.1em;
+}
+
 .input:focus,
 form input[type=text]:focus,
 form input[type=password]:focus,
@@ -659,16 +656,6 @@ form textarea:focus {
   background-color: #fff;
 }
 
-form input[type=text],
-form input[type=password] {
-  margin: 0;
-}
-
-form p {
-  padding: 0;
-  margin-bottom: 0.6em;
-}
-
 form label {
   color: #6c7c9a;
   font-size: 0.9em;
@@ -679,11 +666,6 @@ form label {
   text-transform: uppercase;
 }
 
-form textarea {
-  height: 12em;
-  font-size: 1.1em;
-}
-
 input[type=submit] {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -691,7 +673,6 @@ input[type=submit] {
   -ms-border-radius: 6px;
   -khtml-border-radius: 6px;
   border-radius: 6px;
-  font-size: 18px;
   line-height: 1.2em;
   padding: 0.3em 1em;
   border-width: 1px;
@@ -712,9 +693,15 @@ input[type=submit] {
   -khtml-background-clip: padding-box;
   background-clip: padding-box;
   font-size: 1.2em;
+  color: #fff;
 }
 
-input[type=submit],
+.fancy-button-reset-base-class::-moz-focus-inner,
+input[type=submit]::-moz-focus-inner {
+  border: none;
+  padding: 0;
+}
+
 input[type=submit]:visited {
   color: #fff;
 }
@@ -729,10 +716,9 @@ input[type=submit]:focus {
   text-shadow: #02070c 0 1px 1px;
 }
 
-input[type=submit]:hover,
-input[type=submit]:hover:visited,
-input[type=submit]:focus,
-input[type=submit]:focus:visited {
+.fancy-button-reset-base-class:focus,
+input[type=submit]:focus {
+  outline: none;
   color: #fff;
 }
 
@@ -747,9 +733,15 @@ input[type=submit]:active {
   -webkit-box-shadow: #192836 0 0.08em 0.2em 1px inset;
   -o-box-shadow: #192836 0 0.08em 0.2em 1px inset;
   box-shadow: #192836 0 0.08em 0.2em 1px inset;
+  color: #fff;
 }
 
-input[type=submit]:active,
+input[type=submit]:hover,
+input[type=submit]:hover:visited,
+input[type=submit]:focus:visited {
+  color: #fff;
+}
+
 input[type=submit]:active:visited {
   color: #fff;
 }

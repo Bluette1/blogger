@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'test_helper'
 
 class AuthorsControllerTest < ActionDispatch::IntegrationTest
@@ -19,7 +17,14 @@ class AuthorsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create author' do
     assert_difference('Author.count') do
-      post authors_url, params: { author: { email: @author.email, password: @author.password, password_confirmation: @author.password_confirmation, username: @author.username } }
+      post authors_url, params: {
+        author: {
+          email: @author.email,
+          password: @author.password,
+          password_confirmation: @author.password_confirmation,
+          username: @author.username
+        }
+      }
     end
 
     assert_redirected_to author_url(Author.last)
@@ -36,7 +41,14 @@ class AuthorsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update author' do
-    patch author_url(@author), params: { author: { email: @author.email, password: @author.password, password_confirmation: @author.password_confirmation, username: @author.username } }
+    patch author_url(@author), params: {
+      author: {
+        email: @author.email,
+        password: @author.password,
+        password_confirmation: @author.password_confirmation,
+        username: @author.username
+      }
+    }
     assert_redirected_to author_url(@author)
   end
 
