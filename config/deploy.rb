@@ -36,7 +36,7 @@ lock "~> 3.16.0"
 # set :ssh_options, verify_host_key: :secure
 
 set :application, "blogger"
-set :repo_url, "https://github.com/Bluette1/blogger"
+set :repo_url, "git@github.com:Bluette1/blogger.git"
 
 # Deploy to the user's home directory
 set :deploy_to, "/home/deploy/#{fetch :application}"
