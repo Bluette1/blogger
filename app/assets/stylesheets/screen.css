@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 html,
 body,
 div,
@@ -380,7 +381,7 @@ form p {
   padding-bottom: 1em;
 }
 
-.comment+.comment {
+.comment + .comment {
   border-top: none;
 }
 
@@ -398,8 +399,8 @@ h6 {
   font-weight: bold;
 }
 
-.comment+h3,
-.comment+h4 {
+.comment + h3,
+.comment + h4 {
   margin: 0 0 0.5em;
 }
 
@@ -459,7 +460,7 @@ a.new_article:active,
   background-image: linear-gradient(#d9d9d9, #f5f5f5);
 }
 
-#sidebar+ul {
+#sidebar + ul {
   padding-right: 180px;
 }
 
@@ -471,11 +472,11 @@ a.new_article:active,
   position: relative;
 }
 
-#sidebar+ul li {
+#sidebar + ul li {
   padding-right: 30px;
 }
 
-#sidebar+ul::after {
+#sidebar + ul::after {
   position: absolute;
   right: 180px;
   top: 0;
@@ -534,7 +535,7 @@ a.new_article:active,
   opacity: 0.2;
 }
 
-#articles li>a:first-child {
+#articles li > a:first-child {
   font-weight: bold;
   display: block;
   color: #2d4159;

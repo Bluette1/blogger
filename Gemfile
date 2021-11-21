@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -64,12 +66,12 @@ gem 'paperclip'
 gem 'sorcery'
 
 gem 'capistrano', '~> 3.11'
-gem 'capistrano-rails', '~> 1.4'
 gem 'capistrano-passenger', '~> 0.2.0'
+gem 'capistrano-rails', '~> 1.4'
 gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
 
 gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 
-gem 'ed25519', '>= 1.2', '< 2.0'
 gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
+gem 'ed25519', '>= 1.2', '< 2.0'
 gem 'nokogiri', '>=1.10.9'
