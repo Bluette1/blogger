@@ -38,11 +38,11 @@ Make sure the server is running
   - http://localhost:3000/articles: where you can view existing articles 
   - http://localhost:3000/tags: where you can view existing articles 
 - Follow the links on the site to access the available features.
-- In order to create articles first login by clicking on [login](https://bloggerwise.herokuapp.com/login). After loging in, you will be able to [add users](https://bloggerwise.herokuapp.com/authors/new), create articles, as well as comment on existing ones.
+- In order to create articles first login by clicking on [login](http://102.220.85.123/login). After loging in, you will be able to [add users](http://102.220.85.123/authors/new), create articles, as well as comment on existing ones.
 
 ##### Live Site
 
-- For purposes of testing the [deployed site](https://bloggerwise.herokuapp.com/), accounts for admin and guest has been added with the following credentials which you can use to login:
+- For purposes of testing the [deployed site](http://102.220.85.123/), accounts for admin and guest has been added with the following credentials which you can use to login:
     ##### Admin
      - Username: admin
      - Email: admin@example.com
