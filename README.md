@@ -18,7 +18,7 @@ PROJECT: BLOG APP](https://www.theodinproject.com/courses/ruby-on-rails/lessons/
 
 ## Live Demo
 
-[Deployed site](https://bloggerwise.herokuapp.com/)
+[Deployed site](http://102.220.85.123/)
 
 ### Run instructions 
 -  You can clone the GitHub repo and type the following commands in the terminal to run the bot locally 
@@ -38,7 +38,7 @@ Make sure the server is running
   - http://localhost:3000/articles: where you can view existing articles 
   - http://localhost:3000/tags: where you can view existing articles 
 - Follow the links on the site to access the available features.
-- In order to create articles first login by clicking on [login](https://bloggerwise.herokuapp.com/login). After loging in, you will be able to [add users](https://bloggerwise.herokuapp.com/authors/new) (if you're admin), create articles, as well as comment on existing ones.
+- In order to create articles first login by clicking on [login](https://bloggerwise.herokuapp.com/login). After loging in, you will be able to [add users](https://bloggerwise.herokuapp.com/authors/new), create articles, as well as comment on existing ones.
 
 ##### Live Site
 
@@ -53,7 +53,14 @@ Make sure the server is running
      - Password: password
 
 ## Deployment
-- You can deploy on [Heroku](https://devcenter.heroku.com/categories/ruby-support).
+- You can deploy on 
+  - [Heroku](https://devcenter.heroku.com/categories/ruby-support).
+
+  - [Cloud server using Capistrano](https://gorails.com/deploy/ubuntu/18.04)
+
+     #### Capistrano Logging Command:
+         `tail -f blogger/shared/log/production.log`
+
 
 ## Authors
 
